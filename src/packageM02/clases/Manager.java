@@ -1,6 +1,6 @@
 package packageM02.clases;
 
-public class Manager extends Employees{
+public class Manager extends Employees implements Valida{
 
 	private final double PLUS = 0.10;// ATRIBUTO DE LA CLASE MANAGER
 	
@@ -12,6 +12,15 @@ public class Manager extends Employees{
 	public double salaryPlus() {
 		double plus = this.salary + this.salary * PLUS;
 		return plus;
+	}
+	
+	@Override
+	public boolean validaSueldo() {
+		boolean valida = false;
+			if(super.getSalary() >= 3000 && super.getSalary() <= 5000) {
+				valida = true;
+			}		
+		return valida;
 	}
 	
 	@Override

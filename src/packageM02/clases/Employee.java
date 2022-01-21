@@ -17,7 +17,7 @@ public class Employee extends Employees{
 	@Override
 	public String toString() {
 		
-		return "Nombre = " + super.getName() + "Salario base = " + super.getSalary() + "Salario más plus categoría = " + salaryPlus();
+		return "Nombre = " + super.getName() + " Salario base = " + super.getSalary() + " Salario más plus categoría = " + salaryPlus();
 	}
 
 }

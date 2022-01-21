@@ -1,6 +1,6 @@
 package packageM02.clases;
 
-public class Voluntary extends Employees{
+public class Voluntary extends Employees implements Valida{
 
 	public Voluntary(String name) {
 		super(name);
@@ -17,4 +17,12 @@ public class Voluntary extends Employees{
 		return "Nombre = " + super.getName() + salaryPlus();
 	}
 
+	@Override
+	public boolean validaSueldo() {
+		boolean valida = false;
+			if(super.getSalary() == 0) {
+				valida = true;
+			}		
+		return valida;
+	}
 }
