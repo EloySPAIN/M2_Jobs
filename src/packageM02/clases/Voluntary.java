@@ -14,15 +14,15 @@ public class Voluntary extends Employees implements Valida{
 	
 	@Override
 	public String toString() {
-		return "Nombre = " + super.getName() + salaryPlus();
+		return "Nombre = " + super.getName() + " " + salaryPlus();
 	}
 
 	@Override
-	public boolean validaSueldo() {
-		boolean valida = false;
+	public void validaSueldo() throws Throwable {
 			if(super.getSalary() == 0) {
-				valida = true;
-			}		
-		return valida;
+				super.getSalary();
+			} else {
+				throw new Exception("Los voluntarios no perciben sueldo");
+			}
 	}
 }

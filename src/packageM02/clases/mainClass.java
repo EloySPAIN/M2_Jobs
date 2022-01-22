@@ -5,7 +5,7 @@ import packageM02.clases.Employees;
 
 public class mainClass {
 
-	public static void startProgram() {
+	public static void startProgram() throws Throwable {
 		Scanner ask = new Scanner(System.in);
 		
 		System.out.println("Marque 1 para iniciar el cálculo de sueldo empleado:");
@@ -26,9 +26,9 @@ public class mainClass {
 		ask.close();
 	}
 	
-	public static void despliegaOpcion(String name) {
+	public static void despliegaOpcion(String name) throws Throwable {
 		Scanner ask = new Scanner(System.in);
-		System.out.println("Indique opción : \n1.- Marque 1 para calcular sueldo empleado: \n2.- Marque 2 para calcular sueldo Manager: \n3.- Marque 3 para calcular sueldo Jefe: \n4.- Marque 3 para calcular sueldo voluntario:");
+		System.out.println("Indique opción : \n1.- Marque 1 para calcular sueldo empleado: \n2.- Marque 2 para calcular sueldo Manager: \n3.- Marque 3 para calcular sueldo Jefe: \n4.- Marque 4 para calcular sueldo voluntario:");
 		int respuesta = ask.nextInt();
 		switch(respuesta) {
 			case 1:
@@ -37,41 +37,32 @@ public class mainClass {
 			case 2:
 				System.out.println("Indique Salario: ");
 				double salary1 = ask.nextDouble();
-				Manager manager = new Manager(name, salary1);
 				try {
-					if(manager.validaSueldo()) {
-						System.out.println(manager.toString());
-					}else {
-						System.out.println("El sueldo mínimo de un Manager está en més de 3000 però menys de 5000€ ");
-					}
+					Manager manager = new Manager(name, salary1);
+					manager.validaSueldo();
+					System.out.println(manager.toString());
 				}catch(Exception ex) {
-					System.out.println("El sueldo no es apropiado");
+					System.out.println(ex.getMessage());
 				}
 				break;
 			case 3:
 				System.out.println("Indique Salario: ");
 				double salary2 = ask.nextDouble();
-				Boss boss = new Boss(name, salary2);
 				try {
-					if(boss.validaSueldo()) {
-						System.out.println(boss.toString());
-					}else {
-						System.out.println("El sueldo mínimo de un Jefe está en més de 8000€ ");
-					}
+					Boss boss = new Boss(name, salary2);
+					boss.validaSueldo();
+					System.out.println(boss.toString());
 				}catch(Exception ex) {
-					System.out.println("El sueldo no es apropiado");
+					System.out.println(ex.getMessage());
 				}
 				break;
 			case 4:
-				Voluntary voluntary = new Voluntary(name);
 				try {
-					if(voluntary.validaSueldo()) {
-						System.out.println(voluntary.toString());
-					}else {
-						System.out.println("Los voluntarios no perciben sueldo");
-					}
+					Voluntary voluntary = new Voluntary(name);
+					voluntary.validaSueldo();
+					System.out.println(voluntary.toString());
 				}catch(Exception ex) {
-					System.out.println("El sueldo no es apropiado");
+					System.out.println(ex.getMessage());
 				}
 				break;
 			default:
@@ -80,7 +71,7 @@ public class mainClass {
 		}
 }
 	
-	public static void employeeVerified(String name) {
+	public static void employeeVerified(String name) throws Throwable {
 		Scanner ask = new Scanner(System.in);
 		System.out.println("Indique Tipo de empleado : \n1.Junior :\n2.Senior : \n3.Mid : ");
 		int respuesta = ask.nextInt();
@@ -88,43 +79,34 @@ public class mainClass {
 			case 1:
 				System.out.println("Indique Salario: ");
 				double salary = ask.nextDouble();
-				EmployeeJunior junior = new EmployeeJunior(name, salary);
 				try {
-					if(junior.validaSueldo()) {
-						System.out.println(junior.toString());
-					}else {
-						System.out.println("El sueldo mínimo de un Junior está en més de 900 pero menys de 1600€ ");
-					}
+					EmployeeJunior junior = new EmployeeJunior(name, salary);
+					junior.validaSueldo();
+					System.out.println(junior.toString());
 				}catch(Exception ex) {
-					System.out.println("El sueldo no es apropiado");
+					System.out.println(ex.getMessage());
 				}
 				break;
 			case 2:
 				System.out.println("Indique Salario: ");
 				double salary1 = ask.nextDouble();
-				EmployeeSenior senior = new EmployeeSenior(name, salary1);
 				try {
-					if(senior.validaSueldo()) {
-						System.out.println(senior.toString());
-					}else {
-						System.out.println("El sueldo mínimo de un Senior está en més de 2700 pero menys de 4000€ ");
-					}
+					EmployeeSenior senior = new EmployeeSenior(name, salary1);
+					senior.validaSueldo();
+					System.out.println(senior.toString());
 				}catch(Exception ex) {
-					System.out.println("El sueldo no es apropiado");
+					System.out.println(ex.getMessage());
 				}
 				break;
 			case 3:
 				System.out.println("Indique Salario: ");
 				double salary2 = ask.nextDouble();
-				EmployeeMid mid = new EmployeeMid(name, salary2);
 				try {
-					if(mid.validaSueldo()) {
-						System.out.println(mid.toString());
-					}else {
-						System.out.println("El sueldo mínimo de un Mid está en més de 1800 pero menys de 2500€ ");
-					}
+					EmployeeMid mid = new EmployeeMid(name, salary2);
+					mid.validaSueldo();
+					System.out.println(mid.toString());
 				}catch(Exception ex) {
-					System.out.println("El sueldo no es apropiado");
+					System.out.println(ex.getMessage());
 				}
 				break;
 			default:

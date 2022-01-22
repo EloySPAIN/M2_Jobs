@@ -10,19 +10,18 @@ public class EmployeeMid extends Employee implements Valida{
 	}
 	
 	public double getReduceSalary() {
-		if(validaSueldo()) {
-			this.salaryFinal = this.salary - this.salary * REDUCE;
-		} 
+		this.salaryFinal = this.salary - this.salary * REDUCE;
+
 		return salaryFinal;
 	}
 
 	@Override
-	public boolean validaSueldo() {
-		boolean valida = false;
+	public void validaSueldo() throws Throwable {
 			if(super.getSalary() >= 1800 && super.getSalary() <= 2500) {
-				valida = true;
-			}		
-		return valida;
+				super.getSalary();
+			} else {
+				throw new Exception("El sueldo mínimo de un Mid está en més de 1800 pero menys de 2500€ ");
+			}
 	}
 	
 	public String toString() {

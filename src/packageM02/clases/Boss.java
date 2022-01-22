@@ -20,11 +20,11 @@ public class Boss extends Employees implements Valida{
 	}
 
 	@Override
-	public boolean validaSueldo() {
-		boolean valida = false;
+	public void validaSueldo() throws Throwable{// CLASE THROWABLE PARA LANZAR A EXCEPCION
 			if(super.getSalary() >= 8000) {
-				valida = true;
-			}		
-		return valida;
+				super.getSalary();
+			} else {
+				throw new Exception("El sueldo para un Jefe debe ser mayor a 8000");
+			}
 	}
 }

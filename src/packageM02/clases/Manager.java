@@ -15,12 +15,12 @@ public class Manager extends Employees implements Valida{
 	}
 	
 	@Override
-	public boolean validaSueldo() {
-		boolean valida = false;
+	public void validaSueldo() throws Throwable {
 			if(super.getSalary() >= 3000 && super.getSalary() <= 5000) {
-				valida = true;
-			}		
-		return valida;
+				super.getSalary();
+			}else {
+				throw new Exception("El sueldo mínimo de un Manager está en més de 3000 però menys de 5000€ ");
+			}
 	}
 	
 	@Override

@@ -10,19 +10,18 @@ public class EmployeeJunior extends Employee implements Valida{
 	}
 
 	public double getReduceSalary() {
-		if(validaSueldo()) {
-			this.salaryFinal = this.salary - this.salary * REDUCE;
-		} 
+
+		this.salaryFinal = this.salary - this.salary * REDUCE;
 		return salaryFinal;
 	}
 
 	@Override
-	public boolean validaSueldo() {
-		boolean valida = false;
+	public void validaSueldo() throws Throwable {
 			if(super.getSalary() >= 900 && super.getSalary() <= 1600) {
-				valida = true;
-			}		
-		return valida;
+				super.getSalary();
+			}else {
+				throw new Exception("El sueldo mínimo de un Junior está en més de 900 pero menys de 1600€ ");
+			}
 	}
 	
 	public String toString() {

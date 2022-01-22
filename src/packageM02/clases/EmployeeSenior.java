@@ -10,19 +10,18 @@ public class EmployeeSenior extends Employee implements Valida{
 	}
 
 	public double getReduceSalary() {
-		if(validaSueldo()) {
-			this.salaryFinal = this.salary - this.salary * REDUCE;
-		} 
+
+		this.salaryFinal = this.salary - this.salary * REDUCE;
 		return salaryFinal;
 	}
 
 	@Override
-	public boolean validaSueldo() {
-		boolean valida = false;
+	public void validaSueldo() throws Throwable {
 			if(super.getSalary() >= 2700 && super.getSalary() <= 4000) {
-				valida = true;
-			}		
-		return valida;
+				super.getSalary();
+			} else {
+				throw new Exception("El sueldo mínimo de un Senior está en més de 2700 pero menys de 4000€ ");
+			}
 	}
 	
 	public String toString() {
