@@ -1,6 +1,6 @@
 package packageM02.clases;
 
-// ATRIBUTOS CLASE ABSTRACTA A HEREDAR
+// ATRIBUTOS SUPER CLASE ABSTRACTA A HEREDAR
 public abstract class Employees {
 	protected String name;
 	protected int pagas;
