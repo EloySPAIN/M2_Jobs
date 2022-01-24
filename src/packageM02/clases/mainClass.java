@@ -1,7 +1,7 @@
 package packageM02.clases;
 
 import java.util.Scanner;
-import packageM02.clases.Employees;
+import packageM02.clases.Employee;
 
 public class mainClass {
 
