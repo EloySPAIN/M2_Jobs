@@ -9,17 +9,13 @@ public class EmployeeSenior extends Employee implements Valida{
 	
 	public EmployeeSenior(String name, double salary, int pagas) {// ATRIBUTOS HEREDADOS
 		super(name, salary, pagas);
-		this.setPlusSalaryByCategory();
+		this.setPlusSalaryByCategory(salary,REDUCE);
 		this.setSalaryTotal(IRPF);
 		this.setRawYearSalary();
 		this.setSalaryYear();
 		this.setSalaryPlusPlantilla();
 	}
 	
-	public void setReduce() {
-		this.plusSalaryByCategory = this.plusSalaryByCategory - this.plusSalaryByCategory * REDUCE;
-	}
-
 	@Override
 	public void validaSueldo() throws Throwable {
 			if(super.getSalary() >= 2700 && super.getSalary() <= 4000) {

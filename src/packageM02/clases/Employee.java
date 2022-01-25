@@ -3,7 +3,7 @@ package packageM02.clases;
 import packageM02.Interfaces.Valida;
 
 public class Employee implements Valida{
-	//private final double REDUCE = 0.15;//REDUCCION DEL 15% SOLO A EMPLEADOS
+	private final double REDUCE = 0.15;//REDUCCION DEL 15% SOLO A EMPLEADOS
 	protected String name;
 	protected int pagas;
 	protected double salary;
@@ -44,8 +44,8 @@ public class Employee implements Valida{
 		return plusSalaryByCategory;
 	}
 	
-	public void setPlusSalaryByCategory() {//MÉTODO ASIGNA LA REDUCCION ÚNICAMENTE A LOS QUE SON "TRABAJADORES" SIN PARÁMETROS
-		this.plusSalaryByCategory = this.salary;
+	public void setPlusSalaryByCategory(double salary, double reduce) {//MÉTODO ASIGNA LA REDUCCION ÚNICAMENTE A LOS QUE SON "TRABAJADORES" RECIBE 2 PARÁMETROS
+		this.plusSalaryByCategory = this.salary - this.salary * reduce;
 	}
 
 	//SOBRECARGA DE MÉTODOS

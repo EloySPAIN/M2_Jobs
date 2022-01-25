@@ -1,11 +1,18 @@
-package packageM02.clases;
+package packageM02.vista;
 
 import java.util.Scanner;
+
+import packageM02.clases.Boss;
 import packageM02.clases.Employee;
+import packageM02.clases.EmployeeJunior;
+import packageM02.clases.EmployeeMid;
+import packageM02.clases.EmployeeSenior;
+import packageM02.clases.Manager;
+import packageM02.clases.Voluntary;
 
 public class mainClass {
 
-	public static void startProgram() throws Throwable {
+	public static void startProgram() throws Throwable {//MÉTODO QUE DISPARA EL PROGRAMA
 		Scanner ask = new Scanner(System.in);
 		System.out.println("Marque 1 para iniciar el cálculo de sueldo empleado:");
 		int opcion = ask.nextInt();
@@ -26,7 +33,7 @@ public class mainClass {
 		ask.close();
 	}
 	
-	public static void despliegaOpcion(String name, int pagas) throws Throwable {
+	public static void despliegaOpcion(String name, int pagas) throws Throwable {//MÉTODO QUE DESPLIEGA LAS MÚLTIPLES OPCIONES
 		Scanner ask = new Scanner(System.in);
 		System.out.println("Indique opción : \n1.- Marque 1 para calcular sueldo empleado: \n2.- Marque 2 para calcular sueldo Manager: \n3.- Marque 3 para calcular sueldo Jefe: \n4.- Marque 4 para calcular sueldo voluntario:");
 		int respuesta = ask.nextInt();
@@ -74,7 +81,7 @@ public class mainClass {
 		}
 }
 	
-	public static void employeeVerified(String name, int pagas) throws Throwable {
+	public static void employeeVerified(String name, int pagas) throws Throwable {//MÉTODO QUE DESPLIEGA LAS OPCIONES DE CADA UNO DE LOS TIPOS DE EMPLEADOS
 		Scanner ask = new Scanner(System.in);
 		System.out.println("Indique Tipo de empleado : \n1.Junior :\n2.Senior : \n3.Mid : ");
 		int respuesta = ask.nextInt();

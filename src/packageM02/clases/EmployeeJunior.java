@@ -9,15 +9,11 @@ public class EmployeeJunior extends Employee implements Valida{
 
 	public EmployeeJunior(String name, double salary, int pagas) {
 		super(name, salary, pagas);//SE DEBEN DE SETTEAR LOS ATRIBUTOS SUELDO ACTUALIZANDO SEGÚN CADA CONDICIÓN
-		this.setPlusSalaryByCategory();
+		this.setPlusSalaryByCategory(salary,REDUCE);
 		this.setSalaryTotal(IRPF);
 		this.setRawYearSalary();
 		this.setSalaryYear();
 		this.setSalaryPlusPlantilla();
-	}
-	
-	public void setReduce() {
-		this.plusSalaryByCategory = this.plusSalaryByCategory - this.plusSalaryByCategory * REDUCE;
 	}
 
 	@Override
