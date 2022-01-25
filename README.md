@@ -3,7 +3,7 @@ Eloy, Isabel, Víctor
 
 Ejercicio M2 - JOBS
 
-M5: Exercici Jobs
+M2: Exercici Jobs
 Una empresa ens demana desenvolupar un software per gestionar el sous del seus empleats.
 MILESTONE 1
 El sistema de pagament dependrà de l’empleat. Hi ha quatre tipus:
